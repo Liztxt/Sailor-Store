@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Carattere&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,156;1,156&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/estilos.css" />
+    <title>Más Vendidos</title>
+  </head>
+  <body>
+    <div id="toast-notificacion" class="toast"></div>
+    <!--Encabezado de la pagina-->
+    <header class="enc-sitio">
+      <a href="./index.html" class="logo-link"><h1>Sailor</h1></a>
+
+      <nav class="buttons">
+        <!--Nav bar despegable que muestra las categorias de la tienda-->
+        <div class="dropdown">
+          <button class="dropdown-button">Catálogo</button>
+
+          <div class="dropdown-content">
+            <a href="./masvendidos.html">Más vendidos</a>
+            <a href="#" class="disabled-link">Skincare</a>
+            <a href="#" class="disabled-link">Labios</a>
+            <a href="#" class="disabled-link">Ojos</a>
+            <a href="#" class="disabled-link">Rostro</a>
+            <a href="#" class="disabled-link">Mejillas</a>
+          </div>
+        </div>
+
+        <!--Boton de carrito e inicio de sesion del encabezado-->
+        <a href="./login.html" class="nava-link">Iniciar sesión</a>
+        <a href="./carrito.html" class="logo-button"
+          ><img src="./img/shopping_cart.png" alt="Logo"
+        /></a>
+      </nav>
+    </header>
+
+    <!--contenedor productos-->
+    <div class="container">
+      <!-- Banner Dior -->
+      <div class="banner-proximo">
+        <div class="proximo-imagen">
+          <img src="./img/bannerDior.png" alt="Paletas Dior próximamente" />
+          <div class="overlay-proximo"></div>
+        </div>
+        <div class="proximo-contenido">
+          <p class="proximo-tag">PRÓXIMAMENTE</p>
+          <h2>Colección <span>Dior</span></h2>
+          <p class="proximo-desc">
+            Las paletas más exclusivas llegarán pronto a nuestra tienda
+          </p>
+          <div class="proximo-badge">
+            <span>¡No te lo pierdas!</span>
+          </div>
+        </div>
+      </div>
+      <div class="top-enc">
+        <p>Lo que todas <i>aman</i>, lo que todas <i>eligen</i></p>
+      </div>
+      <div id="products-bestsellers" class="contenedor-products"></div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img
+            src="./img/sailor_logo.png"
+            alt="logo de la tienda de maquillaje"
+          />
+        </div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Política de privacidad</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.instagram.com" target="_blank"
+            ><img src="./img/logo insta.png" alt="Instagram"
+          /></a>
+          <a href="https://www.twitter.com" target="_blank"
+            ><img src="./img/logo x.png" alt="X"
+          /></a>
+        </div>
+      </div>
+    </footer>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Sailor. Todos los derechos reservados.</p>
+    </div>
+    <script src="./js/logic-car.js"></script>
+    <script src="./js/masvendidos.js"></script>
+  </body>
+</html>

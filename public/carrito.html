@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Carattere&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,156;1,156&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/carrito.css" />
+    <title>Sailor</title>
+  </head>
+  <body>
+    <!-- Ícono del carrito -->
+    <div class="icono-carrito-contenedor">
+      <span class="icono-carrito">🛒</span>
+      <span id="carrito-contador" class="carrito-contador-burbuja">0</span>
+    </div>
+
+    <!-- Total general -->
+    <div id="cart-total">
+      <span>Total: $<span id="total-price">0.00</span></span>
+    </div>
+
+    <!-- FORMULARIO DE PAGO -->
+    <div class="formulario-pago">
+      <h3>Detalles de Pago</h3>
+
+      <form id="form-pago">
+        <div class="metodos-pago">
+          <label>
+            <input type="radio" name="metodo-pago" value="tarjeta" checked />
+            Tarjeta
+          </label>
+          <label>
+            <input type="radio" name="metodo-pago" value="paypal" /> PayPal
+          </label>
+          <label>
+            <input type="radio" name="metodo-pago" value="transferencia" />
+            Transferencia
+          </label>
+        </div>
+
+        <div id="detalles-tarjeta-credito">
+          <div class="form-grupo">
+            <label for="numero-tarjeta">Número de Tarjeta</label>
+            <input
+              type="text"
+              id="numero-tarjeta"
+              placeholder="1234 5678 9012 3456"
+            />
+          </div>
+
+          <div class="form-fila">
+            <div class="form-grupo">
+              <label for="fecha-venc">Fecha Venc.</label>
+              <input type="text" id="fecha-venc" placeholder="MM/AA" />
+            </div>
+            <div class="form-grupo">
+              <label for="cvv">CVV</label>
+              <input type="text" id="cvv" placeholder="123" />
+            </div>
+          </div>
+        </div>
+
+        <!-- ✅ BOTÓN DENTRO DEL FORMULARIO -->
+        <button type="submit" id="checkout-button">Pagar</button>
+      </form>
+    </div>
+
+    <!-- CARRITO DE COMPRAS -->
+    <div id="cart">
+      <h2>Carrito de Compras</h2>
+      <table id="cart-items">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Total</th>
+            <th>Eliminar</th>
+          </tr>
+        </thead>
+        <tbody id="cart-tbody"></tbody>
+      </table>
+      <div id="cart-total">
+        <button id="checkout-button2">Pagar</button>
+      </div>
+    </div>
+
+    <script src="./js/logic-car.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        actualizarCarritoVisual();
+
+        // --- LÓGICA DE PAGO ---
+        const botonPagar = document.getElementById("checkout-button");
+        const formPago = document.getElementById("form-pago");
+
+        botonPagar.addEventListener("click", (event) => {
+          event.preventDefault();
+
+          const numTarjeta = document.getElementById("numero-tarjeta").value;
+          if (numTarjeta === "") {
+            mostrarToast("Por favor, completa los datos de pago");
+            return;
+          }
+
+          botonPagar.textContent = "Procesando pago...";
+          botonPagar.disabled = true;
+
+          setTimeout(() => {
+            vaciarCarrito();
+            mostrarToast("¡Pago procesado exitosamente!");
+            formPago.reset();
+            botonPagar.textContent = "Pagar";
+            botonPagar.disabled = false;
+          }, 2000);
+        });
+      });
+    </script>
+  </body>
+</html>

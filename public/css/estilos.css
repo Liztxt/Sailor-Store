@@ -1,0 +1,585 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: rgba(255, 255, 255, 0.212);
+  font-size: 25px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Encabezado de la pagina */
+.enc-sitio {
+  background-color: rgba(17, 94, 136, 0.293);
+  padding: 10px 30px;
+  color: #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.enc-sitio .logo-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.enc-sitio .logo-link h1,
+.enc-sitio h1 {
+  font-family: "Carattere", cursive;
+  font-weight: 400;
+  font-size: 50px;
+  margin: 0;
+}
+
+.enc-sitio .logo-link:hover h1 {
+  opacity: 0.8;
+}
+
+/* Navbar */
+nav.buttons {
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  align-items: center;
+}
+
+.nava-link {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 600;
+  font-size: 15px;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nava-link:hover {
+  color: #ffffff;
+}
+
+/* Navbar despegable */
+.dropdown {
+  position: relative;
+  z-index: 1000;
+  display: inline-block;
+}
+
+.dropdown-button {
+  background-color: transparent;
+  color: #1a1a1a;
+  padding: 10px 15px;
+  font-size: 15px;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.dropdown-button:hover {
+  color: white;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(16, 117, 175, 0.453);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.disabled-link {
+  color: #8db0c5;
+  cursor: default;
+}
+
+/* Icono shopping cart */
+.logo-button img {
+  height: 20px;
+  width: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.logo-button:hover img {
+  transform: scale(1.1);
+  filter: invert(1);
+}
+
+#img1 {
+  margin: 10px;
+  height: 200px;
+  width: 200px;
+  padding: 0px;
+  border-radius: 2%;
+  transition: transform 0.3s ease;
+}
+
+#img1:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Estanteria de productos */
+#products-bestsellers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  justify-items: center;
+  align-items: start;
+  max-width: 1000px;
+  margin: 40px auto; /* 👈 Cambié de 60px a 40px para coincidir con index */
+  gap: 40px; /* 👈 Cambié de 50px a 40px */
+  padding: 0 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+
+.producto-card {
+  background: transparent;
+  border-radius: 8px;
+  padding: 0;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  transition: transform 0.2s ease;
+  overflow: hidden;
+  width: 100%;
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.producto-imagen-container {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border-radius: 8px;
+  margin-bottom: 15px; /* 👈 Igual que index */
+  overflow: hidden;
+}
+
+.producto-card:hover .producto-imagen {
+  transform: scale(1.1); /* 👈 Igual que index (cambiado de 1.08) */
+}
+
+.producto-imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease-out;
+}
+
+.producto-info {
+  padding: 0; /* 👈 Sin padding extra como en index */
+}
+
+.producto-nombre {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  margin: 10px 0; /* 👈 Igual que index */
+  min-height: 2.8rem;
+  line-height: 1.4; /* 👈 Igual que index */
+}
+
+.producto-precio {
+  font-size: 1.3rem;
+  color: #790742c4;
+  font-weight: bold;
+  margin-bottom: 15px; /* 👈 Igual que index */
+}
+
+/* Media queries para responsive */
+@media (max-width: 1024px) {
+  #products-bestsellers {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 700px;
+    gap: 30px; /* 👈 Igual que index */
+  }
+}
+
+@media (max-width: 640px) {
+  #products-bestsellers {
+    grid-template-columns: 1fr;
+    max-width: 350px;
+    gap: 25px;
+  }
+
+  .producto-imagen-container {
+    height: 250px; /* 👈 Mantiene la misma altura que desktop */
+  }
+}
+
+.container {
+  margin-top: 0;
+  margin-bottom: 100px;
+}
+
+.container h1 {
+  display: flex;
+  font-family: "Carattere", cursive;
+  font-weight: 400;
+  font-size: 55px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  justify-content: center;
+  height: 200px;
+  background-color: transparent;
+  margin-top: 0;
+  background-size: cover;
+  align-items: center;
+}
+
+.top-enc {
+  margin-top: 100px;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 45px;
+  align-items: center;
+  margin-bottom: 100px;
+  font-weight: 100;
+}
+
+footer {
+  background-color: rgba(255, 255, 255, 0.953);
+  color: rgba(211, 211, 211, 0.862);
+  padding: 40px 0;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  margin-top: 200px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.footer-logo {
+  width: 100px;
+  height: auto;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.footer-links a {
+  color: rgba(0, 0, 0, 0.862);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  display: flex;
+}
+
+.footer-links a:hover {
+  color: #006aff;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social img {
+  width: 30px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.footer-social a:hover img {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  background-color: rgb(0, 0, 0); /* 👈 Cambié para que coincida con index */
+  height: 100px;
+  padding: 10px 0;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff; /* 👈 Cambié de #cdcdcd a #ffffff */
+  text-align: center;
+  margin: 0;
+}
+
+/* Mensaje del carrito */
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 16px;
+  position: fixed;
+  z-index: 100;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+  font-size: 17px;
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Boton agregar al carrito */
+.btn-agregar {
+  background: #7907427c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 12px;
+  transition: background 0.3s;
+}
+
+.btn-agregar:hover {
+  background: rgba(179, 0, 122, 0.8);
+}
+/* Banner Próximamente */
+.banner-proximo {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 450px;
+  margin: 80px auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proximo-imagen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.proximo-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.overlay-proximo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(121, 7, 66, 0.85) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+.proximo-contenido {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 40px;
+  max-width: 600px;
+}
+
+.proximo-tag {
+  font-family: "Roboto Mono", monospace;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #ffd700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.proximo-contenido h2 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 60px;
+  font-weight: 100;
+  margin: 15px 0;
+  line-height: 1.2;
+}
+
+.proximo-contenido h2 span {
+  font-weight: 400;
+  font-style: italic;
+  display: block;
+  font-size: 70px;
+  background: linear-gradient(90deg, #ffffff, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.proximo-desc {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin: 25px 0 35px;
+}
+
+.proximo-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 2px solid #ffd700;
+  padding: 15px 35px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.proximo-badge span {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ffd700;
+  text-transform: uppercase;
+}
+
+.proximo-badge:hover {
+  background: rgba(255, 215, 0, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .banner-proximo {
+    height: 350px;
+    margin: 50px 20px;
+  }
+
+  .proximo-contenido h2 {
+    font-size: 40px;
+  }
+
+  .proximo-contenido h2 span {
+    font-size: 50px;
+  }
+
+  .proximo-desc {
+    font-size: 16px;
+  }
+
+  .proximo-badge {
+    padding: 12px 25px;
+  }
+
+  .proximo-badge span {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-proximo {
+    height: 300px;
+  }
+
+  .proximo-contenido h2 {
+    font-size: 32px;
+  }
+
+  .proximo-contenido h2 span {
+    font-size: 38px;
+  }
+}
+.producto-link {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.producto-link:hover {
+  transform: translateY(-3px);
+}
+
+.producto-link:hover .producto-nombre {
+  color: #790742c4;
+}
+
+.btn-agregar {
+  background: #7907427c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 12px;
+  transition: background 0.3s;
+  width: calc(100% - 40px);
+  margin: 0 20px 20px;
+}
+
+.btn-agregar:hover {
+  background: rgba(179, 0, 122, 0.8);
+}
+
+.producto-info {
+  padding: 0 20px;
+}
+
+.producto-card {
+  background: transparent;
+  border-radius: 8px;
+  padding: 0;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+  width: 100%;
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+}

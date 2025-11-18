@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Producto | Sailor Store</title>
+    <link rel="stylesheet" href="./css/producto.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="enc-sitio">
+        <a href="index.html" class="logo-link">
+            <h1>Sailor</h1>
+        </a>
+        <nav class="buttons">
+            <a href="index.html" class="nav-button">Catálogo</a>
+            <a href="login.html" class="nav-button" id="nav-auth-link">Iniciar sesión</a>
+            <a href="carrito.html" class="nav-button">
+                Carrito 
+                <span id="carrito-contador" class="cart-counter hidden">0</span>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Contenido Principal -->
+    <div class="product-container">
+        <div class="product-category mb-4">
+            <a href="index.html">Inicio</a> > 
+            <a href="index.html">Catálogo</a> > 
+            <span id="breadcrumb-nombre-producto">Cargando...</span>
+        </div>
+        
+        <!-- Contenedor de Carga/Error -->
+        <div id="loading-state" class="text-center py-20">
+            <div class="loading-animation"></div>
+            <p class="text-lg text-gray-600">Cargando producto...</p>
+        </div>
+
+        <!-- LAYOUT PRINCIPAL DEL PRODUCTO -->
+        <div id="product-content" class="product-layout hidden">
+            <div class="side-thumbnails">
+                <img id="thumb-1" src="https://placehold.co/100x100/7b9cbe/ffffff?text=Vista+1" alt="Thumbnail 1" class="thumbnail active">
+                <img id="thumb-2" src="https://placehold.co/100x100/7b9cbe/ffffff?text=Vista+2" alt="Thumbnail 2" class="thumbnail">
+                <img id="thumb-3" src="https://placehold.co/100x100/7b9cbe/ffffff?text=Vista+3" alt="Thumbnail 3" class="thumbnail">
+            </div>
+
+            <!-- Imagen principal -->
+            <div class="main-image-container">
+                <img id="product-image" src="" alt="Producto Principal" class="main-image">
+            </div>
+
+            <!-- Información del producto -->
+            <div class="product-info">
+                <div class="product-category">Categoría: <span id="product-category-name"></span></div>
+                <h1 id="product-title" class="product-title">Nombre del Producto</h1>
+                
+                <!-- Reseñas -->
+                <div class="flex items-center gap-2 mb-4">
+                    <span style="color:#ffc107;">★★★★☆</span>
+                    <span style="font-size:0.9rem; color:#999;">(450 Reseñas)</span>
+                </div>
+
+                <div class="product-price">
+                    <span id="product-price">$99.99</span>
+                </div>
+                
+                <!-- Selector de Tonos-->
+                <div class="color-options-selector mb-5">
+                    <h4 style="font-size: 1rem; font-weight: bold; margin-bottom: 8px;">Tono Seleccionado: <span id="selected-shade-name" style="color:#3498db;">Violeta Suave</span></h4>
+                    <div id="shade-options" class="flex gap-2">
+                    </div>
+                </div>
+
+                <div id="product-description-short" class="product-description">
+                    <p>Descripción detallada del producto que explica sus características principales...</p>
+                </div>
+                
+                <!-- Selector de Cantidad -->
+                <div class="quantity-selector">
+                    <label style="font-weight: bold; margin-right: 10px;">Cantidad:</label>
+                    <button class="quantity-btn" id="qty-minus">-</button>
+                    <input type="number" value="1" min="1" class="quantity-input" id="qty-input" readonly>
+                    <button class="quantity-btn" id="qty-plus">+</button>
+                </div>
+
+                <!-- Botones de Compra -->
+                <div class="purchase-options">
+                    <button id="add-to-cart-btn" class="add-to-cart">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 1a.5.5 0 0 0 0 1h1.115l.401 1.607.41 1.644A1.5 1.5 0 0 0 5 12h8a1.5 1.5 0 0 0 1.483-1.22l.331-1.326A1.5 1.5 0 0 0 13 8h-.057c.395-.828.455-1.748.257-2.613L12.75 3H3.14a.5.5 0 0 0-.447.276L.5 1zM7 9H4v1h3V9zm2 0h3v1H9V9zm4 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
+                        Añadir al carrito
+                    </button>
+                    <button id="add-to-wishlist-btn" class="add-to-wishlist">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 2.748a4.992 4.992 0 0 1 4.582 2.368c-.69.873-1.637 1.93-2.673 3.125-1.04-.378-2.022-.98-2.909-1.89-1.007-1.087-1.722-2.126-2.029-2.583A4.99 4.99 0 0 1 8 2.748zm0 1.646c.394 0 .783.13 1.096.386.313.256.54.604.673 1.002.133.398.17.818.106 1.222-.064.404-.265.772-.587 1.077L8 14.286l-2.288-2.288c-.322-.305-.523-.673-.587-1.077-.064-.404-.027-.824.106-1.222.133-.398.36-.746.673-1.002.313-.256.702-.386 1.096-.386z"/></svg>
+                        Añadir a Deseados
+                    </button>
+                </div>
+
+                <!-- Pestañas de Información Adicional -->
+                <div class="additional-info">
+                    <div class="info-tabs">
+                        <div class="tab active" id="tab-desc">Descripción Completa</div>
+                        <div class="tab" id="tab-ingr">Ingredientes</div>
+                        <div class="tab" id="tab-envio">Envío y Devoluciones</div>
+                    </div>
+                    <div class="tab-content" id="tab-content">
+                        <p id="product-description-full">Información adicional sobre el producto, incluyendo detalles técnicos, especificaciones, información de envío y políticas de devolución.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sección de Productos Relacionados -->
+    <section class="related-products-section">
+        <h2 style="font-size: 1.5rem; font-weight: bold; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">Productos que Podrían Gustarte</h2>
+        <div id="related-products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;"
+        </div>
+    </section>
+    <!-- Toasts de Notificación -->
+    <div id="toast-notification" class="toast">
+        ¡Producto añadido al carrito!
+    </div>
+    <div id="toast-wishlist" class="toast">
+        Producto añadido/eliminado de Deseados.
+    </div>
+    <script src="./js/product.js"></script> 
+</body>
+</html>

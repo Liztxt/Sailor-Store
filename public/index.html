@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Carattere&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,156;1,156&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Sailor</title>
+  </head>
+  <body>
+    <div id="toast-notificacion" class="toast"></div>
+    <!--Encabezado de la pagina-->
+    <header class="enc-sitio">
+      <h1>Sailor</h1>
+      <nav class="buttons">
+        <!--Nav bar despegable que muestra las categorias de la tienda-->
+        <div class="dropdown">
+          <button class="dropdown-button">Catálogo</button>
+
+          <div class="dropdown-content">
+            <a href="./masvendidos.html">Más vendidos</a>
+            <a href="#" class="disabled-link">Skincare</a>
+            <a href="#" class="disabled-link">Labios</a>
+            <a href="#" class="disabled-link">Ojos</a>
+            <a href="#" class="disabled-link">Rostro</a>
+            <a href="#" class="disabled-link">Mejillas</a>
+          </div>
+        </div>
+        <!--Boton de carrito e inicio de sesion del encabezado-->
+
+        <a href="./login.html" class="nava-link">Iniciar sesión</a>
+        <a href="./carrito.html" class="logo-button"
+          ><img src="./img/shopping_cart.png" alt="Logo"
+        /></a>
+      </nav>
+    </header>
+
+    <!--Bannner principal de la pagina-->
+    <div class="banner">
+      <img
+        src="./img/bannerprincipal.jpg"
+        alt="Imagen principal de la página"
+      />
+
+      <div class="enc-banner">
+        <p><strong>CREEMOS QUE</strong></p>
+        <h1>Tu <i>piel</i> es primero</h1>
+        <p>
+          Adentrate a nuestra tienda y encuentra los productos ideales para una
+          piel perfecta.
+        </p>
+        <a href="./masvendidos.html" class="btb">Explorar</a>
+      </div>
+    </div>
+    <!--Primera sección de productos-->
+    <div class="products">
+      <div class="top-productos">
+        <p><strong>IMPRESCINDIBLES</strong></p>
+        <h1>Todo lo que no puede <i>faltar</i> en tu cosmetiquera.</h1>
+      </div>
+      <div id="productos-p1" class="contenedor-productos"></div>
+    </div>
+
+    <!--Segundo banner Rare Beauty-->
+    <div class="sec-banner">
+      <img src="./img/bannerrare beaty.jpeg" alt="iluminadores rare beaty" />
+      <div class="container">
+        <p><strong>NUEVO LANZAMIENTO</strong></p>
+        <h1>Logra una piel <i>deslumbrante</i> con Rare Beauty</h1>
+        <p>
+          ¡Los iluminadores de Rare Beauty ya están en nuestro catálogo! No te
+          los pierdas, ven a conseguirlos en nuestra tienda.
+        </p>
+        <button class="btn" onclick="window.location.href='./masvendidos.html'">
+          Conseguirlos
+        </button>
+      </div>
+    </div>
+
+    <!--Segunda sección de productos-->
+    <div class="products-2">
+      <div class="top-product2">
+        <p><strong>NO TE QUEDES SIN ELLOS</strong></p>
+        <h1>
+          Una amplia <i>variedad</i> de productos en todas las gamas posibles.
+        </h1>
+      </div>
+      <div id="productos-p2" class="contenedor-productos"></div>
+    </div>
+
+    <!--Banner final Melu-->
+    <section class="final">
+      <img src="./img/bannerfinal(melu).jpg" id="melu" alt="makeup" />
+      <div class="container2">
+        <p><strong>DE MODA</strong></p>
+        <h1>tu tienda de confianza...</h1>
+        <p>
+          Nos encargamos de cuidar tu piel y resaltar tu belleza, porque te
+          mereces sentirte radiante cada día ♡.
+        </p>
+      </div>
+    </section>
+
+    <!--Pie de pagina-->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img
+            src="./img/sailor_logo.png"
+            alt="logo de la tienda de maquillaje"
+          />
+        </div>
+
+        <div class="footer-links">
+          <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Política de privacidad</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-social">
+          <a href="https://www.instagram.com" target="_blank"
+            ><img src="./img/logo insta.png" alt="Instagram"
+          /></a>
+          <a href="https://www.twitter.com" target="_blank"
+            ><img src="./img/logo x.png" alt="X"
+          /></a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Sailor. Todos los derechos reservados.</p>
+    </div>
+    <script src="./js/logic-car.js"></script>
+    <script src="./js/index-page.js" defer></script>
+  </body>
+</html>
