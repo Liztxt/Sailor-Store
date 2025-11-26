@@ -8,7 +8,7 @@ body {
 }
 /* Encabezado de la pagina */
 .enc-sitio {
-  background-color: #5a96bc;
+  background-color: #5a9fbcdf;
   padding: 10px 30px;
   color: #1a1a1a;
   display: flex;
@@ -61,11 +61,14 @@ nav.buttons {
   color: white;
 }
 .dropdown-content {
-  display: none; /* Oculto por defecto */
+  display: none; 
   position: absolute;
-  background-color: rgba(16, 117, 175, 0.608);
+  background-color: rgba(9, 152, 187, 0.608);
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  font-family: "Roboto Mono", monospace;
+  font-weight: 600;
+  font-size: 14px;
   z-index: 1;
 }
 .dropdown:hover .dropdown-content {
@@ -97,6 +100,32 @@ nav.buttons {
 .logo-button:hover img {
   transform: scale(1.1);
   filter: invert(1);
+}
+
+/*Barra de busqueda */
+.search-bar-container-nav {
+    flex-grow: 1; 
+    max-width: 120px; 
+    margin: 0 40px; 
+    margin-left: auto;
+
+}
+.search-input {
+    width: 100%;
+    padding: 8px 15px;
+    border: 1px solid #021929; 
+    border-radius: 20px; 
+    font-family: "Roboto Mono", monospace; /* Usando una fuente ya cargada en tu HTML */
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+    transition: border-color 0.3s;
+    background-color: #5a9fbc00;
+}
+.search-input:focus {
+    border-color: #00000061;
+    outline: none;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.2);
 }
 /* Estilo banner princial */
 .banner {

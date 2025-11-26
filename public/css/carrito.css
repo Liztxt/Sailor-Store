@@ -1,8 +1,7 @@
-/* === ESTILOS GENERALES === */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #cce9ff, #f3cdda);
+  background: #f3cdda4d;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -11,7 +10,7 @@ body {
   color: #333;
 }
 
-/* === ICONO DE CARRITO === */
+/* icono de carrito */
 .icono-carrito-contenedor {
   position: fixed;
   top: 20px;
@@ -48,8 +47,6 @@ body {
   border-radius: 10px;
   font-weight: 600;
 }
-
-/* === SECCIÓN DEL CARRITO === */
 #cart {
   background: #fff;
   border-radius: 15px;
@@ -68,7 +65,7 @@ body {
   font-weight: 600;
 }
 
-/* === TABLA DE PRODUCTOS === */
+/* tabla */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -95,7 +92,30 @@ tr:hover {
   background-color: #fafafa;
 }
 
-/* === TOTAL === */
+.info-tag-style, .product-type-tag {
+  background-color: #5a9fbc00; 
+  color: rgb(0, 0, 0);
+  font-size: 0.8rem; 
+  font-family: 'Roboto Mono', monospace;
+  padding: 8px 15px; 
+  border-radius: 20px;
+  margin-top: 15px; 
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  left: 0;
+  transform: translateY(-50%);
+}
+.info-tag-style:hover, .product-type-tag:hover {
+    background-color: #3498db7c; 
+    color: white;
+}
+
 #cart-total {
   text-align: right;
   font-weight: 600;
@@ -104,7 +124,7 @@ tr:hover {
   margin-bottom: 20px;
 }
 
-/* === BOTÓN DE PAGO === */
+/* boton */
 #checkout-button,
 #checkout-button2 {
   display: block;
@@ -124,7 +144,7 @@ tr:hover {
   background-color: #3d9bd9;
 }
 
-/* === FORMULARIO DE PAGO === */
+/* forms */
 .formulario-pago {
   background-color: #fff;
   border-radius: 15px;
@@ -183,7 +203,6 @@ input[type="text"]:focus {
   gap: 10px;
 }
 
-/* === ANIMACIÓN === */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -194,7 +213,6 @@ input[type="text"]:focus {
     transform: translateY(0);
   }
 }
-/* Botones +, -, x*/
 .celda-cantidad {
   display: flex;
   align-items: center;
@@ -202,7 +220,6 @@ input[type="text"]:focus {
   gap: 10px;
 }
 
-/* Número de cantidad */
 .cantidad-numero {
   font-weight: 600;
   font-size: 16px;
@@ -211,11 +228,10 @@ input[type="text"]:focus {
   color: #333;
 }
 
-/* Botones + y - */
 .btn-cantidad {
   width: 32px;
   height: 32px;
-  border-radius: 50%; /* 👈 Hace el botón redondo */
+  border-radius: 50%; 
   background: white;
   color: #790742c4;
   border: 2px solid #790742c4;
@@ -240,11 +256,10 @@ input[type="text"]:focus {
   transform: scale(0.95);
 }
 
-/* Botón eliminar (X) */
 .btn-eliminar {
   width: 32px;
   height: 32px;
-  border-radius: 50%; /* 👈 Hace el botón redondo */
+  border-radius: 50%; 
   background: white;
   color: #dc3545;
   border: 2px solid #dc3545;
@@ -269,7 +284,6 @@ input[type="text"]:focus {
   transform: scale(0.95);
 }
 
-/* Asegura que la tabla se vea bien */
 table td {
   vertical-align: middle;
   padding: 15px 10px;

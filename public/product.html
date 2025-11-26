@@ -2,25 +2,47 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalles del Producto | Sailor Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Carattere&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,156;1,156&display=swap"
+      rel="stylesheet"
+    />
+    <title>Detalles del Producto</title>
     <link rel="stylesheet" href="./css/producto.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
 </head>
 <body>
-    <!-- Header -->
+    <div id="toast-notificacion" class="toast"></div>
+    <!--Encabezado de la pagina-->
     <header class="enc-sitio">
-        <a href="index.html" class="logo-link">
-            <h1>Sailor</h1>
-        </a>
-        <nav class="buttons">
-            <a href="index.html" class="nav-button">Catálogo</a>
-            <a href="login.html" class="nav-button" id="nav-auth-link">Iniciar sesión</a>
-            <a href="carrito.html" class="nav-button">
-                Carrito 
-                <span id="carrito-contador" class="cart-counter hidden">0</span>
-            </a>
-        </nav>
+      <h1>Sailor</h1>
+      <nav class="buttons">
+        <!--Nav bar despegable de las categorias-->
+        <div class="dropdown">
+          <button class="dropdown-button">Catálogo</button>
+
+          <div class="dropdown-content">
+            <a href="./masvendidos.html">Más vendidos</a>
+            <a href="#" class="disabled-link">Skincare</a>
+            <a href="#" class="disabled-link">Labios</a>
+            <a href="#" class="disabled-link">Ojos</a>
+            <a href="#" class="disabled-link">Rostro</a>
+            <a href="#" class="disabled-link">Mejillas</a>
+          </div>
+        </div>
+        <!--Boton de carrito e inicio de sesion del encabezado-->
+
+        <a href="./login.html" class="nava-link">Iniciar sesión</a>
+        <a href="./carrito.html" class="logo-button"
+          ><img src="./img/shopping_cart.png" alt="Logo"
+        /></a>
+      </nav>
     </header>
 
     <!-- Contenido Principal -->

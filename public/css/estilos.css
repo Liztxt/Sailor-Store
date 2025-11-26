@@ -135,7 +135,31 @@ nav.buttons {
   transform: scale(1.2);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+/*Barra de busqueda */
+.search-bar-container-nav {
+    flex-grow: 1; 
+    max-width: 120px; 
+    margin: 0 40px; 
+    margin-left: auto;
 
+}
+.search-input {
+    width: 100%;
+    padding: 8px 15px;
+    border: 1px solid #021929; 
+    border-radius: 20px; 
+    font-family: "Roboto Mono", monospace; /* Usando una fuente ya cargada en tu HTML */
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+    transition: border-color 0.3s;
+    background-color: #5a9fbc00;
+}
+.search-input:focus {
+    border-color: #00000061;
+    outline: none;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+}
 /* Estanteria de productos */
 #products-bestsellers {
   display: grid;
