@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Carattere&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,156;1,156&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/estilos.css" />
+    <title>Favoritos</title>
+    <style>
+        .favoritos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        .producto-card .btn-eliminar-fav {
+            position: absolute;
+            bottom: 5px; 
+            left: 5px; 
+            background: #bc5a81;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            z-index: 10;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="toast-notificacion" class="toast"></div>
+    <!--Encabezado de la pagina-->
+    <header class="enc-sitio">
+      <a href="./index.html" class="logo-link"><h1>Sailor</h1></a>
+
+
+      <!--Barra de busqueda-->
+      <div class="search-bar-container-nav">
+        <input type="search" id="search-input" placeholder="Buscar ⌕" class="search-input"/>
+      </div>
+
+      <nav class="buttons">
+        <!--Nav bar despegable de las categorias-->
+        <div class="dropdown">
+          <button class="dropdown-button">Catálogo</button>
+
+          <div class="dropdown-content">
+            <a href="./masvendidos.html">Más vendidos</a>
+            <a href="#" class="disabled-link">Skincare</a>
+            <a href="#" class="disabled-link">Labios</a>
+            <a href="#" class="disabled-link">Ojos</a>
+            <a href="#" class="disabled-link">Rostro</a>
+            <a href="#" class="disabled-link">Mejillas</a>
+          </div>
+        </div>
+        <!--Boton de carrito e inicio de sesion del encabezado-->
+
+        <a href="./login.html" class="nava-link">Iniciar sesión</a>
+        <a href="./carrito.html" class="logo-button"
+          ><img src="./img/shopping_cart.png" alt="Logo"
+        /></a>
+        <a href="./destacados.html" class="logo-button">
+          <img src="./img/favorite.png" alt="Logo"/>
+        </a>
+      </nav>
+    </header>
+
+    <div class="product-container">
+        <h1 style="font-size: 2.5rem; color:#1a3658; border-bottom: 2px solid #eee; padding-bottom: 10px;">
+            ♡ Wish List
+        </h1>
+        
+        <div id="favoritos-grid" class="favoritos-grid">
+        </div>
+
+        <p id="empty-message" class="hidden" style="text-align: center; margin-top: 50px; color: #999; font-size: 1.2rem;">
+            Tu lista de favoritos está vacía. ¡Añade tus productos desde el catálogo!
+        </p>
+    </div>
+
+    <script src="./js/logic-car.js"></script>
+    <script src="./js/fav.js"></script>
+  </body>
+</html>

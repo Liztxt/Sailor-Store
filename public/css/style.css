@@ -571,3 +571,43 @@ footer {
   display: flex;
   flex-direction: column;
 }
+.producto-imagen-container {
+    position: relative; 
+    overflow: hidden;
+}
+
+.btn-favorito {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.7); /* Fondo semi-transparente */
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, background 0.3s;
+    z-index: 10;
+}
+
+.favorito-icono {
+    width: 20px; 
+    height: 20px;
+    filter: grayscale(100%) brightness(0.7); 
+    transition: filter 0.3s;
+}
+
+.btn-favorito.favorito-activo {
+    background: #e74c3c;
+}
+.btn-favorito.favorito-activo .favorito-icono {
+    filter: invert(100%); 
+}
+
+.btn-favorito:hover {
+    transform: scale(1.1);
+}

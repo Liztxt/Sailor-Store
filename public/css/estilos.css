@@ -607,3 +607,43 @@ footer {
   display: flex;
   flex-direction: column;
 }
+.producto-imagen-container {
+    position: relative; 
+    overflow: hidden;
+}
+
+.btn-favorito {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0); 
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+    z-index: 10;
+}
+
+.favorito-icono {
+    width: 20px; 
+    height: 20px;
+    filter: sepia(1) saturate(0) hue-rotate(0deg) brightness(0.6); 
+    transition: filter 0.3s;
+}
+
+.btn-favorito.favorito-activo {
+   background: #000000eb; 
+    transform: scale(1.05);
+}
+.btn-favorito.favorito-activo .favorito-icono {
+   filter: brightness(0) invert(1) saturate(1); 
+}
+
+.btn-favorito:hover {
+    transform: scale(1.1);
+}
